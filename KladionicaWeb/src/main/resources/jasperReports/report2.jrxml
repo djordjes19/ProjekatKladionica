@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1fcfa481-f11c-46c0-a222-fc498cbe5ff9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="tekMesec" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="sport.naziv" class="java.lang.String"/>
+	<field name="idUtakmica" class="java.lang.Integer"/>
+	<field name="datumUtakmice" class="java.util.Date"/>
+	<field name="tim1.naziv" class="java.lang.String"/>
+	<field name="tim2.naziv" class="java.lang.String"/>
+	<variable name="brojUtakmica" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{idUtakmica}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="40" width="299" height="30" uuid="4005da41-ea75-4c58-b2e8-4885dbb4f20d"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="16"/>
+				</textElement>
+				<text><![CDATA[Spisak utakmica u tekucem mesecu]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="19" width="128" height="30" uuid="da49834c-32a1-4a9c-9389-900c6251fe3f"/>
+				<text><![CDATA[Spisak utakmica za mesec: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="19" width="100" height="30" uuid="7cec7cc7-4f35-4202-95fa-92833022aea2"/>
+				<textFieldExpression><![CDATA[$P{tekMesec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="30" y="31" width="100" height="30" backcolor="#FF0000" uuid="2ecca5f3-71d7-4362-a70b-4da8ef103ec0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f00c335b-e9f6-4adc-a628-227de2b14bc0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id utakmice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="31" width="100" height="30" backcolor="#FF0000" uuid="fab55b72-36a6-4dde-bfc4-40cc2bb77b19">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c62dfec5-d002-48ca-bd73-66ebf985cafe"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datum utakmice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="130" y="31" width="100" height="30" backcolor="#FF0000" uuid="8c278284-9d37-4150-aca8-8aa09c7b1c91">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cac8716-1780-45de-9994-a1c44098d99d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sport]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="330" y="31" width="100" height="30" backcolor="#FF0000" uuid="d6ca7a8d-4f20-4498-bfa4-c894504dfdd1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="180d31c8-bea4-4fee-8ac5-d927623ece9e"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domaci tim]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="430" y="31" width="100" height="30" backcolor="#FF0000" uuid="0e0ae83c-b4fe-44fe-97e7-144bc8c4a605">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65eca06f-795f-4e8c-a54e-ddb469e0865e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gostujuci tim]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="130" y="0" width="100" height="30" uuid="b09bcca0-bcf3-41ff-bbf9-8a2d65961a38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4cac8716-1780-45de-9994-a1c44098d99d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sport.naziv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="100" height="30" uuid="a1f1ca62-01d8-4064-a45d-e2dae08b1a7b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="357d673f-98d0-47db-8a87-e335993deee0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{idUtakmica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="100" height="30" uuid="48f57369-8156-4d49-b5ba-e4f0ce0df99c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="023e56cf-fac0-4490-b278-495b2b6f23a6"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{datumUtakmice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="0" width="100" height="30" uuid="f0608239-a638-437d-b47a-9baa623be53e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="180d31c8-bea4-4fee-8ac5-d927623ece9e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tim1.naziv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="30" uuid="34cd37c2-e44e-4f4c-a914-ee0cdececb4b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65eca06f-795f-4e8c-a54e-ddb469e0865e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tim2.naziv}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="30" width="100" height="20" uuid="72fb9088-069b-4ec9-a540-b88298ea064e"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="66" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="30" width="140" height="18" uuid="4719694c-7565-4726-8b89-4a724629b79b"/>
+				<text><![CDATA[Broj utakmica za tekuci mesec:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="220" y="30" width="100" height="18" uuid="e405070c-1caa-4bb6-9825-856e45900a71"/>
+				<textFieldExpression><![CDATA[$V{brojUtakmica}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
